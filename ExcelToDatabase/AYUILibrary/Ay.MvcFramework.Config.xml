@@ -1,0 +1,234 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Ay.MvcFramework.Config</name>
+    </assembly>
+    <members>
+        <member name="M:Ay.MvcFramework.Config.AySerialize`1.Save(`0)">
+            <summary>
+            注册--保存用户信息
+            </summary>
+        </member>
+        <member name="M:Ay.MvcFramework.Config.AySerialize`1.Load">
+            <summary>
+            读取用户信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Ay.MvcFramework.Config.TextB">
+            <summary>
+            文字导航
+            </summary>
+        </member>
+        <member name="T:Ay.Framework.WPF.AyPathConfig">
+            <summary>
+            方便快速的处理AyPath的图标
+            2016-8-5 20:38:10
+            AY  剥离Path数据到单独的xml，方便可视化管理
+            </summary>
+        </member>
+        <member name="M:Ay.Framework.WPF.AyPathConfig.GetIcons(System.String,System.String,System.Boolean)">
+            <summary>  
+            返回XMl文件指定元素的指定属性值  
+            </summary>  
+            <param name="xmlElement">指定元素</param>  
+            <param name="xmlAttribute">指定属性</param>  
+            <param name="xmlpath">读取的xml文件名字</param>  
+            <param name="reloadXml">是否重新加载XML</param>  
+            <returns></returns>  
+        </member>
+        <member name="M:Ay.Framework.WPF.AyPathConfig.SetIcons(System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>  
+            设置XMl文件指定元素的指定属性的值  
+            </summary>  
+            <param name="xmlElement">指定元素</param>  
+            <param name="xmlAttribute">指定属性</param>  
+            <param name="xmlValue">指定值</param>  
+        </member>
+        <member name="T:Ay.Framework.WPF.Applications.ConfigSetting">
+            <summary>
+            读取，查询和更新xml
+            创建时间：2015-03-05 14:11:37
+            作者：杨洋
+            </summary>
+        </member>
+        <member name="M:Ay.Framework.WPF.Applications.ConfigSetting.GetXmlValue(System.String,System.String,System.Boolean)">
+            <summary>  
+            返回XMl文件指定元素的指定属性值  
+            </summary>  
+            <param name="xmlElement">指定元素</param>  
+            <param name="xmlAttribute">指定属性</param>  
+            <param name="xmlpath">读取的xml文件名字</param>  
+            <param name="reloadXml">是否重新加载XML</param>  
+            <returns></returns>  
+        </member>
+        <member name="M:Ay.Framework.WPF.Applications.ConfigSetting.SetXmlValue(System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>  
+            设置XMl文件指定元素的指定属性的值  
+            </summary>  
+            <param name="xmlElement">指定元素</param>  
+            <param name="xmlAttribute">指定属性</param>  
+            <param name="xmlValue">指定值</param>  
+        </member>
+        <member name="T:Ay.Framework.WPF.ConfigSettingLocal">
+            <summary>
+            方便快速的处理xml
+            </summary>
+        </member>
+        <member name="M:Ay.Framework.WPF.ConfigSettingLocal.GetXmlValue(System.String,System.String,System.Boolean)">
+            <summary>  
+            返回XMl文件指定元素的指定属性值  
+            </summary>  
+            <param name="xmlElement">指定元素</param>  
+            <param name="xmlAttribute">指定属性</param>  
+            <param name="xmlpath">读取的xml文件名字</param>  
+            <param name="reloadXml">是否重新加载XML</param>  
+            <returns></returns>  
+        </member>
+        <member name="M:Ay.Framework.WPF.ConfigSettingLocal.SetXmlValue(System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>  
+            设置XMl文件指定元素的指定属性的值  
+            </summary>  
+            <param name="xmlElement">指定元素</param>  
+            <param name="xmlAttribute">指定属性</param>  
+            <param name="xmlValue">指定值</param>  
+        </member>
+        <member name="T:AyuiConfig">
+            <summary>
+            ayui 4.0 2016-6-19 01:20:09
+            作者：AY
+            主要统一，也方便用户自定义自己的路径
+            2016-6-19 尚未考虑视频背景的路径，关于软件注册，暂时尚未考虑设计
+            </summary>
+        </member>
+        <member name="P:AyuiConfig.IsInDesignMode">
+            <summary>
+            Gets a value indicating whether the control is in design mode (running in Blend
+            or Visual Studio).
+            </summary>
+        </member>
+        <member name="P:AyuiConfig.ApplicationDirectory">
+             <summary>
+            System.Windows.Forms.Application.StartupPath
+             </summary>
+        </member>
+        <member name="P:AyuiConfig.BaseDirectory">
+            <summary>
+            给自己用的,有斜杠结尾 ApplicationDirectory + @"\";
+            </summary>
+        </member>
+        <member name="F:AyuiConfig.AYUI_ScreenRecordConfigFileNamePath">
+            <summary>
+            配置多显示器的时候，屏幕情况保存记录的文件名字，绝对路径screenstatus.dat
+            作者：AY
+            时间：2016-6-19 21:21:25
+            </summary>
+        </member>
+        <member name="F:AyuiConfig.AYUI_ConfigFileNamePath">
+            <summary>
+            配置文件路径，AYUI框架必须的
+            </summary>
+        </member>
+        <member name="F:AyuiConfig.AYUI_BackgroundImageDirectoryPath">
+            <summary>
+            用于皮肤窗口，展示缩略图的图片，点击图片后的真实图片的文件夹路径，AYUI框架必须的
+            作者：AY
+            添加时间：2016-6-19 
+            </summary>
+        </member>
+        <member name="F:AyuiConfig.AYUI_BackgroundImageThumbDirectoryPath">
+            <summary>
+            用于皮肤窗口，展示缩略图的的图片文件夹路径，AYUI框架必须的
+            作者：AY
+            添加时间：2016-6-19 
+            </summary>
+        </member>
+        <member name="F:AyuiConfig.AYUI_RelativeBg_BgPath">
+            <summary>
+            作用：因为皮肤窗口默认显示的图片都是相对路径，就是不包括根目录的，例如\Contents\bg\bg\a景观\1.jpg，需要以此作为判断当前图片是否是选中的图片
+            主要用于皮肤设置窗口，存储xml中的相对路径，皮肤图片，那么就会截取相对路径，而不是绝对路径
+            注意：比如斜杠开头,斜杠结尾，例如\Contents\bg\bg\，然后一直到可以直接加 a.jpg这种文件名，就可以获得文件的路径
+            作者：AY
+            添加时间：2016-6-19 
+            </summary>
+        </member>
+        <member name="F:AyuiConfig.AYUI_RelativeBg_ThumbPath">
+            <summary>
+            作用：因为皮肤窗口默认显示的图片都是相对路径，就是不包括根目录的，例如\Contents\bg\thumb\a景观\1.jpg，需要以此作为判断当前图片是否是选中的图片
+            主要用于皮肤设置窗口，存储xml中的相对路径，皮肤图片，那么就会截取相对路径，而不是绝对路径
+            注意：比如斜杠开头,斜杠结尾，例如\Contents\bg\thumb\  就是去除软件根目录，然后一直到可以直接加 a.jpg这种文件名，就可以获得文件的路径
+            作者：AY
+            添加时间：2016-6-19 
+            </summary>
+        </member>
+        <member name="F:AyuiConfig.AYUI_DiyImageDirectoryName">
+            <summary>
+            作用：皮肤窗口，图片背景，最后1个分类的名字
+            默认叫做"自定义",默认文件夹名字叫"z自定义"
+            作者：AY
+            添加时间：2016-6-19 
+            </summary>
+        </member>
+        <member name="F:AyuiConfig.AYUI_DiyColorTabTitle">
+            <summary>
+            作用：皮肤窗口，纯色背景，Tab的名字，默认值是 "所有"
+            作者：AY
+            添加时间：2016-6-19 
+            </summary>
+        </member>
+        <member name="F:AyuiConfig.AYUI_RegisterTableSoftwareName">
+            <summary>
+            作用：用于设置本机的注册表，LocalMachine下SOFTWARE下你的软件的注册表根节点名字，如果你用不到注册表，可以不用设置
+            作者：AY
+            添加时间：2016-6-19 
+            </summary>
+        </member>
+        <member name="F:AyuiConfig.AYUI_AudioRecordDirectory">
+            <summary>
+            作用：用于设置语音 AyRecordToolBar控件默认语音存储的文件夹名称
+            默认位置:  \Contents\audio\
+            作者：AY
+            添加时间：2016-9-3
+            </summary>
+        </member>
+        <member name="F:AyuiConfig.AYUI_ColorsCollection">
+            <summary>
+            皮肤窗口的颜色列表
+            </summary>
+        </member>
+        <member name="M:AyuiConfig.AYUI_ColorsCollectionBuilder(System.Collections.Generic.List{System.String},System.Boolean)">
+            <summary>
+            创建AYUI框架的 皮肤窗口中纯色背景的颜色对象
+            默认是替换模式，如果需要
+            作者：AY
+            添加时间：2016-6-19
+            </summary>
+            <param name="colors">例如"#101745","#10893E"</param>
+            <param name="isAppend">是否追加颜色</param>
+        </member>
+        <member name="F:AyuiConfig.AYUI_RelativeVideo_BgPath">
+            <summary>
+            视频临时缩略图和预览图地址
+            _big命名结尾的是大图，切换视频显示，上方是对应视频。
+            作者：AY
+            增加时间：2016-6-19 
+            </summary>
+        </member>
+        <member name="M:AyuiConfig.Get_AYUI_VideoRealDirectory">
+            <summary>
+            获取视频真实地址
+            作者：AY
+            增加时间：2016-6-19 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AyuiConfig.Get_AYUI_TempDirectory">
+            <summary>
+            获取AYUI临时的文件夹存放软件临时文件
+            作者：AY
+            增加时间：2016-9-11 
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

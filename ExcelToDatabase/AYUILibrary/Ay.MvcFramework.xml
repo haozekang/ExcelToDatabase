@@ -1,0 +1,944 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Ay.MvcFramework</name>
+    </assembly>
+    <members>
+        <member name="T:Ay.MvcFramework.AppStartLoadAttribute">
+            <summary>
+            运行绑定的时候执行  授权类型的过滤器
+            </summary>
+        </member>
+        <member name="T:Ay.MvcFramework.ViewAttribute">
+            <summary>
+            视图数据共享过滤器
+            AY 2017-9-21 14:15:24
+            设计，目的： 页面共享读取数据
+            </summary>
+        </member>
+        <member name="P:Ay.MvcFramework.FilterAttribute.FilterScope">
+            <summary>
+            自己额外加的
+            2017-8-17 16:08:26
+            </summary>
+        </member>
+        <member name="T:Ay.MvcFramework.FilterScope">
+            <summary>
+            ay 2017-8-17 16:07:06
+            为了解决 同类型filter
+            </summary>
+        </member>
+        <member name="P:Ay.MvcFramework.ExceptionContext.Caption">
+            <summary>
+            错误标题
+            </summary>
+        </member>
+        <member name="P:Ay.MvcFramework.ExceptionContext.StackError">
+            <summary>
+            堆栈信息
+            </summary>
+        </member>
+        <member name="T:Ay.MvcFramework.IExceptionFilter">
+            <summary>
+            错误统一处理 对外
+            AY 2017-9-21 17:22:37
+            </summary>
+        </member>
+        <member name="T:Ay.MvcFramework.BasicProxy">
+            <summary>
+            BasicProxy 的摘要说明。
+            </summary>
+        </member>
+        <member name="F:Ay.MvcFramework.BasicProxy.BINDING_FLAGS">
+            <summary>
+            类提取器的标志
+            </summary>
+        </member>
+        <member name="F:Ay.MvcFramework.BasicProxy._properties">
+            <summary>
+            设置器Map(propertyName,IGetterSetter)
+            </summary>
+        </member>
+        <member name="T:Ay.MvcFramework.DictionaryProxy">
+            <summary>
+            DictionaryProxy 的摘要说明。
+            </summary>
+        </member>
+        <member name="T:Ay.MvcFramework.DynaAccessUtils">
+            <summary>
+            动态属性访问工具类。
+            </summary>
+        </member>
+        <member name="F:Ay.MvcFramework.DynaAccessUtils._proxyCache">
+            <summary>
+            线程安全的类型属性Map(Type,IDynaAccessProxy)
+            </summary>
+        </member>
+        <member name="F:Ay.MvcFramework.DynaAccessUtils._listProxy">
+            <summary>
+            数组或者IList实例的代理
+            </summary>
+        </member>
+        <member name="F:Ay.MvcFramework.DynaAccessUtils._dictionaryProxy">
+            <summary>
+            IDictionary实例的代理
+            </summary>
+        </member>
+        <member name="M:Ay.MvcFramework.DynaAccessUtils.GetProperty(System.Object,System.String)">
+            <summary>
+            得到指定对象实例的属性值
+            </summary>
+        </member>
+        <member name="M:Ay.MvcFramework.DynaAccessUtils.SetProperty(System.Object,System.String,System.Object)">
+            <summary>
+            设置指定对象实例的属性值
+            </summary>
+        </member>
+        <member name="M:Ay.MvcFramework.DynaAccessUtils.GetPropertyNames(System.Object)">
+            <summary>
+            得到指定对象实例的属性名称字串数组
+            </summary>
+        </member>
+        <member name="M:Ay.MvcFramework.DynaAccessUtils.HasProperty(System.Object,System.String)">
+            <summary>
+            判断指定对象实例是否存在该属性
+            </summary>
+        </member>
+        <member name="M:Ay.MvcFramework.DynaAccessUtils.GetPropertyType(System.Object,System.String)">
+            <summary>
+            得到指定对象实例中属性的类型
+            </summary>
+        </member>
+        <member name="M:Ay.MvcFramework.DynaAccessUtils.GetObjectProxy(System.Object)">
+            <summary>
+            得到指定对象实例的动态属性访问代理
+            </summary>
+        </member>
+        <member name="T:Ay.MvcFramework.FieldGetterSetter">
+            <summary>
+            类字段提取/设置接口实现
+            </summary>
+        </member>
+        <member name="T:Ay.MvcFramework.IDynaAccessible">
+            <summary>
+            支持动态访问能力接口
+            ***暂时没有使用***
+            </summary>
+        </member>
+        <member name="M:Ay.MvcFramework.IDynaAccessible.GetPropertyNames">
+            <summary>
+            得到可以动态访问的属性名称
+            </summary>
+        </member>
+        <member name="M:Ay.MvcFramework.IDynaAccessible.SetProperty(System.String,System.Object)">
+            <summary>
+            设置动态属性值
+            </summary>
+        </member>
+        <member name="M:Ay.MvcFramework.IDynaAccessible.GetProperty(System.String)">
+            <summary>
+            得到动态属性值
+            </summary>
+        </member>
+        <member name="M:Ay.MvcFramework.IDynaAccessible.HasProperty(System.String)">
+            <summary>
+            判断是否存在指定名称的属性
+            </summary>
+        </member>
+        <member name="M:Ay.MvcFramework.IDynaAccessible.GetPropertyType(System.String)">
+            <summary>
+            得到指定动态属性的类型
+            </summary>
+        </member>
+        <member name="T:Ay.MvcFramework.IDynaAccessProxy">
+            <summary>
+            动态访问的代理接口
+            </summary>
+        </member>
+        <member name="M:Ay.MvcFramework.IDynaAccessProxy.GetPropertyNames(System.Object)">
+            <summary>
+            得到指定对象的属性名称数组
+            永远不抛出异常
+            </summary>
+        </member>
+        <member name="M:Ay.MvcFramework.IDynaAccessProxy.SetProperty(System.Object,System.String,System.Object)">
+            <summary>
+            设置指定对象实例的动态属性值
+            </summary>
+            <param name="target">对象实例</param>
+            <param name="propertyName">属性名称</param>
+            <param name="propertyValue">属性值</param>
+            <exception cref="!:Framework.Commons.Property.DynaAccessException">产生任何错误时</exception>
+        </member>
+        <member name="M:Ay.MvcFramework.IDynaAccessProxy.GetProperty(System.Object,System.String)">
+            <summary>
+            获取指定对象实例的动态属性值
+            </summary>
+            <param name="target">对象实例</param>
+            <param name="propertyName">属性名称</param>
+            <returns>属性值</returns>
+            <exception cref="!:Framework.Commons.Property.DynaAccessException">产生任何错误时</exception>
+        </member>
+        <member name="M:Ay.MvcFramework.IDynaAccessProxy.HasProperty(System.Object,System.String)">
+            <summary>
+            判断是否存在指定名称的属性
+            永远不抛出异常
+            </summary>
+        </member>
+        <member name="M:Ay.MvcFramework.IDynaAccessProxy.GetPropertyType(System.Object,System.String)">
+            <summary>
+            得到指定动态属性的类型
+            </summary>
+            <exception cref="!:Framework.Commons.Property.DynaAccessException">产生任何错误时</exception>
+        </member>
+        <member name="P:Ay.MvcFramework.IDynaAccessProxy.ProxyType">
+            <summary>
+            得到代理的类型
+            永远不抛出异常
+            </summary>
+        </member>
+        <member name="T:Ay.MvcFramework.IGetterSetter">
+            <summary>
+            指定属性值提取/设置接口
+            </summary>
+        </member>
+        <member name="M:Ay.MvcFramework.IGetterSetter.Get(System.Object)">
+            <summary>
+            得到指定对象实例的属性值
+            </summary>
+            <param name="target"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ay.MvcFramework.IGetterSetter.Set(System.Object,System.Object)">
+            <summary>
+            设置指定类实例的属性值
+            </summary>
+            <param name="target"></param>
+            <param name="value"></param>
+        </member>
+        <member name="P:Ay.MvcFramework.IGetterSetter.PropertyType">
+            <summary>
+            得到属性的类型.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Ay.MvcFramework.IGetterSetter.PropertyName">
+            <summary>
+            得到属性名称
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Ay.MvcFramework.IPropertyGetterSetter">
+            <summary>
+            类属性提取/设置接口
+            </summary>
+        </member>
+        <member name="T:Ay.MvcFramework.IFieldGetterSetter">
+            <summary>
+            类字段提取/设置接口
+            </summary>
+        </member>
+        <member name="T:Ay.MvcFramework.ListProxy">
+            <summary>
+            ListProxy 的摘要说明。
+            </summary>
+        </member>
+        <member name="T:Ay.MvcFramework.PropertyGetterSetter">
+            <summary>
+            类属性提取/设置接口实现
+            </summary>
+        </member>
+        <member name="T:Ay.MvcFramework.Actions`1">
+            <summary>
+            生日 2017-09-06 14:38:13 
+            增加 xaml.cs 对 Controller的访问控制
+            AY ay www.ayjs.net
+            </summary>
+            <typeparam name="T">AYUI控制器</typeparam>
+        </member>
+        <member name="M:Ay.MvcFramework.Actions`1.#ctor(`0)">
+            <summary>
+            当前窗体对应的控制器类型
+            </summary>
+            <param name="_controllerInstance"></param>
+        </member>
+        <member name="M:Ay.MvcFramework.Actions`1.Use(System.Linq.Expressions.Expression{System.Func{`0,System.ActionResult}})">
+             <summary>
+            直接执行action，不通过Filter
+             </summary>
+             <param name="action">Controller中的Action</param>
+        </member>
+        <member name="M:Ay.MvcFramework.Actions`1.Use(System.Linq.Expressions.Expression{System.Func{`0,System.ActionResult}},System.Object,System.Object,System.Object)">
+             <summary>
+            直接执行action，不通过Filter
+             </summary>
+             <param name="action">Controller中的Action</param>
+             <param name="parameter">Controller中的Action的参数</param>
+             <param name="sender">当前事件的Sender参数</param>
+             <param name="eventArgs">当前事件的args参数</param>
+        </member>
+        <member name="M:Ay.MvcFramework.Actions`1.Use(System.Linq.Expressions.Expression{System.Func{`0,System.ActionResult}},System.Object)">
+             <summary>
+            直接执行action，不通过Filter
+             </summary>
+             <param name="action">Controller中的Action</param>
+             <param name="parameter">Controller中的Action的参数</param>
+        </member>
+        <member name="M:Ay.MvcFramework.Actions`1.UseFilter(System.Linq.Expressions.Expression{System.Func{`0,System.ActionResult}})">
+            <summary>
+            过滤器的方式执行 Action
+            </summary>
+            <param name="action">Controller中的Action</param>
+        </member>
+        <member name="M:Ay.MvcFramework.Actions`1.UseFilter(System.Linq.Expressions.Expression{System.Func{`0,System.ActionResult}},System.Object)">
+            <summary>
+            过滤器的方式执行 Action
+            </summary>
+            <param name="action">Controller中的Action</param>
+            <param name="parameter">Controller中的Action的参数</param>
+        </member>
+        <member name="M:Ay.MvcFramework.Actions`1.UseFilter(System.Linq.Expressions.Expression{System.Func{`0,System.ActionResult}},System.Object,System.Object,System.EventArgs)">
+            <summary>
+            过滤器的方式执行 Action
+            </summary>
+            <param name="action">Controller中的Action</param>
+            <param name="parameter">Controller中的Action的参数</param>
+            <param name="sender">当前事件的Sender参数</param>
+            <param name="eventArgs">当前事件的args参数</param>
+        </member>
+        <member name="M:Ay.MvcFramework.Actions`1.UseFilter(System.Linq.Expressions.Expression{System.Func{`0,System.ActionResult}},System.Object,System.Object,System.EventArgs,Ay.MvcFramework.AyMarkupExtension.CommandBehaviorBinding)">
+            <summary>
+            过滤器的方式执行 Action
+            </summary>
+            <param name="action">Controller中的Action</param>
+            <param name="parameter">Controller中的Action的参数</param>
+            <param name="sender">当前事件的Sender参数</param>
+            <param name="eventArgs">当前事件的args参数</param>
+            <param name="Route">Mvc路由信息模型，无需设置Action和ActionName,如果你在filter中需要信息，你可以传递此参数,主要是EventName,Owner值设置</param>
+        </member>
+        <member name="M:Ay.MvcFramework.Actions`1.UseFilter(System.Linq.Expressions.Expression{System.Func{`0,System.ActionResult}},System.Object,Ay.MvcFramework.AyMarkupExtension.CommandBehaviorBinding)">
+            <summary>
+            过滤器的方式执行 Action
+            </summary>
+            <param name="action">Controller中的Action</param>
+            <param name="parameter">Controller中的Action的参数</param>
+            <param name="Route">Mvc路由信息模型，无需设置Action和ActionName,如果你在filter中需要信息，你可以传递此参数,主要是EventName,Owner值设置</param>
+        </member>
+        <member name="T:Ay.MvcFramework.IExecutionStrategy">
+            <summary>
+            Defines the interface for a strategy of execution for the CommandBehaviorBinding
+            </summary>
+        </member>
+        <member name="P:Ay.MvcFramework.IExecutionStrategy.Route">
+            <summary>
+            Gets or sets the Behavior that we execute this strategy
+            </summary>
+        </member>
+        <member name="M:Ay.MvcFramework.IExecutionStrategy.Execute(System.Object)">
+            <summary>
+            Executes according to the strategy type
+            </summary>
+            <param name="parameter">The parameter to be used in the execution</param>
+        </member>
+        <member name="T:Ay.MvcFramework.AYUIApplication`1">
+            <summary>
+            生日 2016-10-21 04:22:04
+            模板模式+代理模式
+            AY 制作
+            </summary>
+        </member>
+        <member name="P:Ay.MvcFramework.AYUIApplication`1.IsSingleApplication">
+            <summary>
+            是否是单例WPF程序
+            AY：2017-8-16 15:23:08
+            </summary>
+        </member>
+        <member name="M:Ay.MvcFramework.AYUIApplication`1.#ctor(Ay.MvcFramework.AYUIGlobal,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="_global">全局设置</param>
+            <param name="_IsSingleApplication">是否是单例WPF程序</param>
+        </member>
+        <member name="M:Ay.MvcFramework.ApplicationExt.AddResourceDictionary(System.Windows.Application,System.String)">
+            <summary>
+            xaml样式添加
+            </summary>
+            <param name="path">路径</param>
+            <returns></returns>
+        </member>
+        <member name="T:Ay.MvcFramework.AYUIGlobal">
+            <summary>
+            生日 2016-10-21 03:13:55
+            作者：AY
+            </summary>
+        </member>
+        <member name="M:Ay.MvcFramework.AYUIGlobal.RegisterResourceDictionary(Ay.MvcFramework.ClientResourceDictionaryCollection)">
+            <summary>
+            注册资源字典
+            </summary>
+            <param name="routes"></param>
+        </member>
+        <member name="M:Ay.MvcFramework.AYUIGlobal.RegisterFonts(Ay.MvcFramework.ClientFontsCollection)">
+            <summary>
+            注册客户端字体文件，方便系统使用
+            </summary>
+            <param name="routes"></param>
+        </member>
+        <member name="M:Ay.MvcFramework.AYUIGlobal.RegisterLanuages(Ay.MvcFramework.ClientLanuagesCollection)">
+            <summary>
+            注册程序语言,中文文件名必须 zh-cn.xaml
+            </summary>
+            <param name="fonts"></param>
+        </member>
+        <member name="M:Ay.MvcFramework.AYUIGlobal.Application_Start(System.Windows.StartupEventArgs,System.Windows.Application)">
+            <summary>
+            应用程序启动时候触发
+            </summary>
+        </member>
+        <member name="M:Ay.MvcFramework.AYUIGlobal.Application_End(System.Windows.ExitEventArgs)">
+            <summary>
+            应用程序结束时候触发
+            </summary>
+        </member>
+        <member name="M:Ay.MvcFramework.AYUIGlobal.Application_SessionEnding(System.Windows.SessionEndingCancelEventArgs)">
+            <summary>
+            当用户注销或关闭系统时发生
+            </summary>
+        </member>
+        <member name="M:Ay.MvcFramework.AYUIGlobal.Application_Activated(System.EventArgs)">
+            <summary>
+            应用程序退出时候
+            </summary>
+        </member>
+        <member name="M:Ay.MvcFramework.AYUIGlobal.Application_Deactivated(System.EventArgs)">
+            <summary>
+            应用程序退出时候
+            </summary>
+        </member>
+        <member name="M:Ay.MvcFramework.IActionFilter.OnActionExecuted(Ay.MvcFramework.IExecutionStrategy)">
+            <summary>
+            执行之后
+            </summary>
+            <param name="filterContext"></param>
+        </member>
+        <member name="M:Ay.MvcFramework.IActionFilter.OnActionExecuting(Ay.MvcFramework.IExecutionStrategy)">
+            <summary>
+            执行之前
+            </summary>
+            <param name="filterContext"></param>
+        </member>
+        <member name="P:Ay.MvcFramework.ControllerBase.ViewBag">
+            <summary>
+            未填写
+            </summary>
+        </member>
+        <member name="F:Ay.MvcFramework.Internal.CustomAttributeHelper.Cache">
+            <summary>
+            Cache Data
+            </summary>
+        </member>
+        <member name="M:Ay.MvcFramework.Internal.CustomAttributeHelper.GetCustomAttributeValue``1(System.Type,System.Func{``0,System.String})">
+            <summary>
+            获取CustomAttribute Value
+            </summary>
+            <typeparam name="T">Attribute的子类型</typeparam>
+            <param name="sourceType">头部标有CustomAttribute类的类型</param>
+            <param name="attributeValueAction">取Attribute具体哪个属性值的匿名函数</param>
+            <returns>返回Attribute的值，没有则返回null</returns>
+        </member>
+        <member name="M:Ay.MvcFramework.Internal.CustomAttributeHelper.GetCustomAttributeValue``1(System.Type,System.Func{``0,System.String},System.String)">
+            <summary>
+            获取CustomAttribute Value
+            </summary>
+            <typeparam name="T">Attribute的子类型</typeparam>
+            <param name="sourceType">头部标有CustomAttribute类的类型</param>
+            <param name="attributeValueAction">取Attribute具体哪个属性值的匿名函数</param>
+            <param name="name">field name或property name</param>
+            <returns>返回Attribute的值，没有则返回null</returns>
+        </member>
+        <member name="M:Ay.MvcFramework.Internal.CustomAttributeHelper.CacheAttributeValue``1(System.Type,System.Func{``0,System.String},System.String)">
+            <summary>
+            缓存Attribute Value
+            </summary>
+        </member>
+        <member name="M:Ay.MvcFramework.Internal.CustomAttributeHelper.BuildKey(System.Type,System.String)">
+            <summary>
+            缓存Collection Name Key
+            </summary>
+        </member>
+        <member name="P:Ay.MvcFramework.LanguageSelectModel.LanuageName">
+            <summary>
+            语言 别名，用于皮肤设置中 下拉选项的文本
+            </summary>
+        </member>
+        <member name="P:Ay.MvcFramework.LanguageSelectModel.ResourceName">
+            <summary>
+            语言包    文件名，例如 zh-cn.xaml 就填写 zh-cn
+            </summary>
+        </member>
+        <member name="T:Ay.MvcFramework.AyMarkupExtension.AlignmentService">
+            <summary>
+            生日：2016-10-27 00:22:36
+            理想：简化xaml写法
+            </summary>
+        </member>
+        <!-- 对于成员“T:Ay.MvcFramework.AyMarkupExtension.ComparisonBinding”忽略有格式错误的 XML 注释 -->
+        <member name="F:Ay.MvcFramework.AyMarkupExtension.GridService.ColumnsProperty">
+            <summary>
+            字符串规则: 1 2 3 4 5 8* a ?
+            a代表自动auto  ?代表不填写
+            支持空格或者#或者逗号，效果是一样的，主要方便断数字 比如 n2v1*x3 1* 1* 1* 2*#300 32
+            n是min的结束词，表示最小宽度,v是value的缩略词，代表width，x代表max最大宽度
+            </summary>
+        </member>
+        <member name="T:Ay.MvcFramework.AyMarkupExtension.IfElseResourceConverter">
+            <summary>
+            0|1:男,2:女,3:不男不女#未知
+            0:男,1:女,2:不男不女#未知
+            0:男:女
+            </summary>
+        </member>
+        <!-- 对于成员“T:Ay.MvcFramework.AyMarkupExtension.IfElseColorConverter”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“T:Ay.MvcFramework.AyMarkupExtension.IfElseStringConverter”忽略有格式错误的 XML 注释 -->
+        <member name="P:Ay.MvcFramework.AyMarkupExtension.DataSetter.TargetName">
+            <summary>
+            指定名字
+            </summary>
+        </member>
+        <member name="P:Ay.MvcFramework.AyMarkupExtension.DataSetter.Scope">
+            <summary>
+            资源范围
+            </summary>
+        </member>
+        <member name="T:Ay.MvcFramework.AyMarkupExtension.DataSetterScope">
+            <summary>
+            数据的 name查找方式
+            </summary>
+        </member>
+        <member name="T:Ay.MvcFramework.AyMarkupExtension.ResourceSetterScope">
+            <summary>
+            资源字典 的 key查找方式
+            </summary>
+        </member>
+        <member name="P:Ay.MvcFramework.AyMarkupExtension.AyVisualState.SetterMode">
+            <summary>
+            默认终止，执行方式
+            </summary>
+        </member>
+        <member name="P:Ay.MvcFramework.AyMarkupExtension.AyVisualStateGroup.Orientation">
+            <summary>
+            组名
+            </summary>
+        </member>
+        <member name="M:Ay.MvcFramework.AyMarkupExtension.AyVisualStateManager.SetAyVisualStateGroups(System.Windows.DependencyObject,Ay.MvcFramework.Internal.Xaml.mvc.Collection.AyVisualStateGroupCollection)">
+            <summary>
+            Provides a secure method for setting the Behaviors property.  
+            This dependency property indicates ....
+            </summary>
+        </member>
+        <member name="P:Ay.MvcFramework.AyMarkupExtension.ResourceSetter.TargetName">
+            <summary>
+            指定名字
+            </summary>
+        </member>
+        <member name="P:Ay.MvcFramework.AyMarkupExtension.ResourceSetter.Scope">
+            <summary>
+            资源范围
+            </summary>
+        </member>
+        <member name="P:Ay.MvcFramework.AyMarkupExtension.ResourceSetter.ResourceValue">
+            <summary>
+            资源值
+            </summary>
+        </member>
+        <member name="P:Ay.MvcFramework.AyMarkupExtension.ResourceSetter.ResourceType">
+            <summary>
+            资源类型
+            </summary>
+        </member>
+        <member name="T:Ay.MvcFramework.AyMarkupExtension.RouteSetter">
+            <summary>
+            Defines a Command Binding
+            This inherits from freezable so that it gets inheritance context for DataBinding to work
+            </summary>
+        </member>
+        <member name="P:Ay.MvcFramework.AyMarkupExtension.RouteSetter.Behavior">
+            <summary>
+            Stores the Command Behavior Binding
+            </summary>
+        </member>
+        <member name="P:Ay.MvcFramework.AyMarkupExtension.RouteSetter.Owner">
+            <summary>
+            Gets or sets the Owner of the binding
+            </summary>
+        </member>
+        <member name="F:Ay.MvcFramework.AyMarkupExtension.RouteSetter.ActionProperty">
+            <summary>
+            Action Dependency Property
+            </summary>
+        </member>
+        <member name="P:Ay.MvcFramework.AyMarkupExtension.RouteSetter.Action">
+            <summary>
+            Gets or sets the Action property. 
+            </summary>
+        </member>
+        <member name="M:Ay.MvcFramework.AyMarkupExtension.RouteSetter.OnActionChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Handles changes to the Action property.
+            </summary>
+        </member>
+        <member name="M:Ay.MvcFramework.AyMarkupExtension.RouteSetter.OnActionChanged(System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Provides derived classes an opportunity to handle changes to the Action property.
+            </summary>
+        </member>
+        <member name="F:Ay.MvcFramework.AyMarkupExtension.RouteSetter.ParameterProperty">
+            <summary>
+            CommandParameter Dependency Property
+            </summary>
+        </member>
+        <member name="P:Ay.MvcFramework.AyMarkupExtension.RouteSetter.Parameter">
+            <summary>
+            Gets or sets the CommandParameter property.  
+            </summary>
+        </member>
+        <member name="M:Ay.MvcFramework.AyMarkupExtension.RouteSetter.OnParameterChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Handles changes to the CommandParameter property.
+            </summary>
+        </member>
+        <member name="M:Ay.MvcFramework.AyMarkupExtension.RouteSetter.OnParameterChanged(System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Provides derived classes an opportunity to handle changes to the CommandParameter property.
+            </summary>
+        </member>
+        <member name="F:Ay.MvcFramework.AyMarkupExtension.RouteSetter.EventProperty">
+            <summary>
+            Event Dependency Property
+            </summary>
+        </member>
+        <member name="P:Ay.MvcFramework.AyMarkupExtension.RouteSetter.Event">
+            <summary>
+            Gets or sets the Event property.  
+            </summary>
+        </member>
+        <member name="M:Ay.MvcFramework.AyMarkupExtension.RouteSetter.OnEventChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Handles changes to the Event property.
+            </summary>
+        </member>
+        <member name="M:Ay.MvcFramework.AyMarkupExtension.RouteSetter.OnEventChanged(System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Provides derived classes an opportunity to handle changes to the Event property.
+            </summary>
+        </member>
+        <member name="M:Ay.MvcFramework.AyMarkupExtension.RouteSetter.CreateInstanceCore">
+            <summary>
+            This is not actually used. This is just a trick so that this object gets WPF Inheritance Context
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Ay.MvcFramework.AyMarkupExtension.Mvc">
+            <summary>
+            Defines the attached properties to create a MVC
+            </summary>
+        </member>
+        <member name="F:Ay.MvcFramework.AyMarkupExtension.Mvc.BehaviorProperty">
+            <summary>
+            Behavior Attached Dependency Property
+            </summary>
+        </member>
+        <member name="M:Ay.MvcFramework.AyMarkupExtension.Mvc.GetBehavior(System.Windows.DependencyObject)">
+            <summary>
+            Gets the Behavior property. 
+            </summary>
+        </member>
+        <member name="M:Ay.MvcFramework.AyMarkupExtension.Mvc.SetBehavior(System.Windows.DependencyObject,Ay.MvcFramework.AyMarkupExtension.CommandBehaviorBinding)">
+            <summary>
+            Sets the Behavior property.  
+            </summary>
+        </member>
+        <member name="F:Ay.MvcFramework.AyMarkupExtension.Mvc.ActionProperty">
+            <summary>
+            Action Attached Dependency Property
+            </summary>
+        </member>
+        <member name="M:Ay.MvcFramework.AyMarkupExtension.Mvc.GetAction(System.Windows.DependencyObject)">
+            <summary>
+            Gets the Action property.  
+            </summary>
+        </member>
+        <member name="M:Ay.MvcFramework.AyMarkupExtension.Mvc.SetAction(System.Windows.DependencyObject,System.ActionResult)">
+            <summary>
+            Sets the Action property. 
+            </summary>
+        </member>
+        <member name="M:Ay.MvcFramework.AyMarkupExtension.Mvc.OnActionChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Handles changes to the Action property.
+            </summary>
+        </member>
+        <member name="F:Ay.MvcFramework.AyMarkupExtension.Mvc.ParameterProperty">
+            <summary>
+            CommandParameter Attached Dependency Property
+            </summary>
+        </member>
+        <member name="M:Ay.MvcFramework.AyMarkupExtension.Mvc.GetParameter(System.Windows.DependencyObject)">
+            <summary>
+            Gets the CommandParameter property.  
+            </summary>
+        </member>
+        <member name="M:Ay.MvcFramework.AyMarkupExtension.Mvc.SetParameter(System.Windows.DependencyObject,System.Object)">
+            <summary>
+            Sets the CommandParameter property. 
+            </summary>
+        </member>
+        <member name="M:Ay.MvcFramework.AyMarkupExtension.Mvc.OnParameterChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Handles changes to the CommandParameter property.
+            </summary>
+        </member>
+        <member name="F:Ay.MvcFramework.AyMarkupExtension.Mvc.EventProperty">
+            <summary>
+            Event Attached Dependency Property
+            </summary>
+        </member>
+        <member name="M:Ay.MvcFramework.AyMarkupExtension.Mvc.GetEvent(System.Windows.DependencyObject)">
+            <summary>
+            Gets the Event property.  This dependency property 
+            indicates ....
+            </summary>
+        </member>
+        <member name="M:Ay.MvcFramework.AyMarkupExtension.Mvc.SetEvent(System.Windows.DependencyObject,System.String)">
+            <summary>
+            Sets the Event property.  This dependency property 
+            indicates ....
+            </summary>
+        </member>
+        <member name="M:Ay.MvcFramework.AyMarkupExtension.Mvc.OnEventChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Handles changes to the Event property.
+            </summary>
+        </member>
+        <member name="T:Ay.MvcFramework.AyMarkupExtension.CommandBehaviorBinding">
+            <summary>
+            Defines the command behavior binding
+            </summary>
+        </member>
+        <member name="P:Ay.MvcFramework.AyMarkupExtension.CommandBehaviorBinding.Owner">
+            <summary>
+            Get the owner of the CommandBinding ex: a Button
+            This property can only be set from the BindEvent Method
+            </summary>
+        </member>
+        <member name="P:Ay.MvcFramework.AyMarkupExtension.CommandBehaviorBinding.EventName">
+            <summary>
+            The event name to hook up to
+            This property can only be set from the BindEvent Method
+            </summary>
+        </member>
+        <member name="P:Ay.MvcFramework.AyMarkupExtension.CommandBehaviorBinding.Event">
+            <summary>
+            The event info of the event
+            </summary>
+        </member>
+        <member name="P:Ay.MvcFramework.AyMarkupExtension.CommandBehaviorBinding.EventHandler">
+            <summary>
+            Gets the EventHandler for the binding with the event
+            </summary>
+        </member>
+        <member name="P:Ay.MvcFramework.AyMarkupExtension.CommandBehaviorBinding.IsSendEventArgs">
+            <summary>
+            2017-9-1 10:17:33 ay  是否发送事件参数
+            </summary>
+        </member>
+        <member name="P:Ay.MvcFramework.AyMarkupExtension.CommandBehaviorBinding.CommandParameter">
+            <summary>
+            Gets or sets a CommandParameter
+            </summary>
+        </member>
+        <member name="M:Ay.MvcFramework.AyMarkupExtension.CommandBehaviorBinding.Execute(System.Object,System.EventArgs)">
+            <summary>
+            Executes the strategy
+            </summary>
+        </member>
+        <member name="M:Ay.MvcFramework.AyMarkupExtension.CommandBehaviorBinding.Dispose">
+            <summary>
+            Unregisters the EventHandler from the Event
+            </summary>
+        </member>
+        <member name="M:Ay.MvcFramework.AyMarkupExtension.MvcRouteCollection.GetRoutes(System.Windows.DependencyObject)">
+            <summary>
+            Gets the Behaviors property.  
+            Here we initialze the collection and set the Owner property
+            2017-09-01 11:37:04 ay 增加
+            </summary>
+        </member>
+        <member name="M:Ay.MvcFramework.AyMarkupExtension.MvcRouteCollection.SetRoutes(System.Windows.DependencyObject,Ay.MvcFramework.AyMarkupExtension.BehaviorBindingCollection)">
+            <summary>
+            Provides a secure method for setting the Behaviors property.  
+            This dependency property indicates ....
+            </summary>
+        </member>
+        <member name="T:Ay.MvcFramework.AyMarkupExtension.BehaviorBindingCollection">
+            <summary>
+            Collection to store the list of behaviors. This is done so that you can intiniate it from XAML
+            This inherits from freezable so that it gets inheritance context for DataBinding to work
+            </summary>
+        </member>
+        <member name="P:Ay.MvcFramework.AyMarkupExtension.BehaviorBindingCollection.Owner">
+            <summary>
+            Gets or sets the Owner of the binding
+            </summary>
+        </member>
+        <member name="T:Ay.MvcFramework.AyMarkupExtension.TextBlockService">
+            <summary>
+            生日：2016-10-27 23:41:03
+            理想：简化xaml写法，设置 TextBlock的样式
+            </summary>
+        </member>
+        <member name="F:Ay.MvcFramework.AyMarkupExtension.TextBlockService.TextStyleProperty">
+            设置TextBlock属性，顺序为： 字号 字体颜色 fontweight 字体 背景色 xie（是否斜体）  
+        </member>
+        <member name="T:Ay.MvcFramework.ReflectionHelper">
+            <summary>
+            反射帮助类
+            </summary>
+        </member>
+        <member name="M:Ay.MvcFramework.ReflectionHelper.ContainProperty``1(System.String)">
+            <summary>
+            根据泛型判断类中是否存在属性
+            </summary>
+            <typeparam name="T">类的泛型</typeparam>
+            <param name="propertyName">要判断的属性名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ay.MvcFramework.ReflectionHelper.ContainProperty(System.Type,System.String)">
+            <summary>
+            根据类型判断类中是否存在属性
+            </summary>
+            <param name="classType">类的类型</param>
+            <param name="propertyName">要判断的属性名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ay.MvcFramework.ReflectionHelper.GetModelValue(System.String,System.Object)">
+            <summary>
+            反射获得属性值
+            </summary>
+            <param name="FieldName"></param>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ay.MvcFramework.ReflectionHelper.SetModelValue(System.String,System.Object,System.Object)">
+            <summary>
+            反射设置属性值
+            </summary>
+            <param name="FieldName"></param>
+            <param name="Value"></param>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="P:AyPropertyChanged.AYID">
+            <summary>
+            标识AYID
+            </summary>
+        </member>
+        <!-- 对于成员“M:AyPropertyChanged.Set``1(``0@,``0,System.Boolean,System.String)”忽略有格式错误的 XML 注释 -->
+        <member name="M:AyTableExtend.ToGridLength(System.String)">
+            <summary>
+            ay 2016-8-11 10:00:49
+            字符串转 gridlength
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AyTableExtend.Add(System.String,System.String)">
+            <summary>
+            计算合并单元格后的宽度
+            ay
+            2016-8-11 10:44:55
+            </summary>
+            <param name="str">字符串1 例如 1*</param>
+            <param name="str2">字符串2 例如 2*</param>
+            <returns></returns>
+        </member>
+        <member name="M:WpfTreeHelper.GetChildObjects``1(System.Windows.DependencyObject,System.Type)">
+            <summary>
+            查找某种类型的子控件，并返回一个List集合
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <param name="typename"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WpfTreeHelper.GetChildObjects``1(System.Windows.DependencyObject,System.String)">
+            <summary>
+            通过名称查找子控件，并返回一个List集合
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WpfTreeHelper.GetChildObject``1(System.Windows.DependencyObject,System.String)">
+            <summary>
+            通过名称查找某子控件
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WpfTreeHelper.GetParentObject``1(System.Windows.DependencyObject,System.String)">
+            <summary>
+            通过名称查找父控件
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WpfTreeHelper.CloneElement(System.Object)">
+            <summary>
+            复制一个节点
+            </summary>
+            <param name="elementToClone"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WpfTreeHelper.FindVisualChild``1(System.Windows.Media.Visual)">
+            <summary>
+            查找可视子元素
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="visual"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WpfTreeHelper.FindFirstVisualChildFromDataTemplate``1(System.Windows.DependencyObject,System.String)">
+            <summary>
+            从数据模板中获得数据
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <param name="childName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WpfTreeHelper.FindChild``1(System.Windows.DependencyObject)">
+            遍历Listbox绑定模板中的控件
+        </member>
+        <member name="P:WpfTreeHelper.IsInDesignMode">
+            <summary>
+            Gets a value indicating whether the control is in design mode (running in Blend
+            or Visual Studio).
+            </summary>
+        </member>
+        <member name="M:UIChildFinder.GetLogicalAncestor``1(System.Windows.DependencyObject)">
+            <summary>
+            从逻辑树找控件
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="d"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

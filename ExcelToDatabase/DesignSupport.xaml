@@ -1,0 +1,14 @@
+﻿<Application   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+             
+                <DesignTime PathIconPath="pack://application:,,,/ExcelToDatabase;component" DesignTimeSource="pack://application:,,,/Ay.MvcFramework.Wpf;component/Themes/Colors/DefaultAyThemeColor.xaml"/>
+                <DesignTime DesignTimeSource="pack://application:,,,/Ay.MvcFramework.Wpf;component/Themes/Common/Font.xaml"/>
+                <DesignTime DesignTimeSource="pack://application:,,,/Ay.MvcFramework.Wpf;component/Themes/Common/NoChanged.xaml"/>
+                <DesignTime DesignTimeSource="pack://application:,,,/Ay.MvcFramework.Wpf;component/Themes/AySkin/DefaultAyControl.xaml"></DesignTime>
+                <DesignTime DesignTimeSource="pack://application:,,,/ExcelToDatabase;component/Contents/Styles/AYUIProjectDictionary.xaml"></DesignTime>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

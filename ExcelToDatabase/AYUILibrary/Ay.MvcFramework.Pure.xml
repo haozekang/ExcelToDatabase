@@ -1,0 +1,364 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Ay.MvcFramework.Pure</name>
+    </assembly>
+    <members>
+        <member name="T:Ay.Framework.WPF.AySnowflake">
+            <summary>  
+            动态生产有规律的ID  
+            AY  twitter的唯一id算法
+            相关技术文章：http://www.cnblogs.com/relucent/p/4955340.html
+            2016-11-23 13:01:01
+            </summary> 
+        </member>
+        <member name="M:Ay.Framework.WPF.AySnowflake.GetTimestamp">
+            <summary>  
+            生成当前时间戳  
+            </summary>  
+            <returns>毫秒</returns>  
+        </member>
+        <member name="M:Ay.Framework.WPF.AySnowflake.GetNextTimestamp(System.Int64)">
+            <summary>  
+            获取下一微秒时间戳  
+            </summary>  
+            <param name="lastTimestamp"></param>  
+            <returns></returns>  
+        </member>
+        <member name="M:Ay.Framework.WPF.AySnowflake.GetId">
+            <summary>  
+            获取长整形的ID  
+            </summary>  
+            <returns></returns>  
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Ay.Framework.WPF.RunCmd._Execute(System.String,System.Int32)" -->
+        <member name="T:Ay.Framework.Common.AyWebServiceDynamicAgent">
+            <summary> 
+            AyWebServiceDynamicAgent
+            AY
+            2016-12-24 13:22:56
+            2016-12-26 新增 解决 name的，wsdl转C#代码报错的问题
+            2016-12-27 新增 dll缓存
+            </summary> 
+        </member>
+        <member name="F:Ay.Framework.Common.AyWebServiceDynamicAgent._wsdlUrl">
+            <summary>          
+            web服务地址              
+            </summary>               
+        </member>
+        <member name="F:Ay.Framework.Common.AyWebServiceDynamicAgent._wsdlName">
+            <summary>          
+            web服务名称              
+            </summary>               
+        </member>
+        <member name="F:Ay.Framework.Common.AyWebServiceDynamicAgent._typeName">
+            <summary>          
+            代理类类型名称              
+            </summary>               
+        </member>
+        <member name="F:Ay.Framework.Common.AyWebServiceDynamicAgent._assName">
+            <summary>          
+            程序集名称               
+            </summary>               
+        </member>
+        <member name="F:Ay.Framework.Common.AyWebServiceDynamicAgent._assPath">
+            <summary>          
+            代理类所在程序集路径              
+            </summary>               
+        </member>
+        <member name="F:Ay.Framework.Common.AyWebServiceDynamicAgent._instance">
+            <summary>          
+            代理类的实例              
+            </summary>               
+        </member>
+        <member name="P:Ay.Framework.Common.AyWebServiceDynamicAgent.DynamicServiceClient">
+            <summary>          
+            代理类的实例              
+            </summary>               
+        </member>
+        <member name="M:Ay.Framework.Common.AyWebServiceDynamicAgent.CreateServiceAssembly">
+            <summary>              
+            得到WSDL信息，生成本地代理类并编译为DLL              
+            </summary>               
+        </member>
+        <member name="M:Ay.Framework.Common.AyWebServiceDynamicAgent.Invoke(System.String,System.Object[])">
+            <summary>              
+            执行代理类指定方法，有返回值                
+            </summary>                 
+            <param  name="methodName">方法名称</param>              
+            <param  name="param">参数</param>               
+            <returns>object</returns>                 
+        </member>
+        <member name="M:Ay.Framework.Common.AyWebServiceDynamicAgent.InvokeNo(System.String,System.Object[])">
+            <summary>              
+            执行代理类指定方法，无返回值                
+            </summary>                 
+            <param  name="methodName">方法名称</param>              
+            <param  name="param">参数</param>               
+        </member>
+        <member name="M:Ay.Framework.Common.AyWebServiceDynamicAgent.initTypeName">
+            <summary>                
+            得到代理类类型名称                 
+            </summary>                 
+        </member>
+        <member name="M:Ay.Framework.Common.AyWebServiceDynamicAgent.checkForImports(System.String,System.Web.Services.Description.ServiceDescriptionImporter)">
+            <summary>            
+            根据web  service文档架构向代理类添加ServiceDescription和XmlSchema               
+            </summary>                 
+            <param  name="baseWSDLUrl">web服务地址</param>              
+            <param  name="importer">代理类</param>               
+        </member>
+        <member name="M:Ay.Framework.Common.AyWebServiceDynamicAgent.copyTempAssembly(System.String)">
+            <summary>              
+            复制程序集到指定路径                
+            </summary>                 
+            <param  name="pathToAssembly">程序集路径</param>               
+        </member>
+        <member name="M:Ay.Framework.Common.AyWebServiceDynamicAgent.checkCache">
+            <summary>              
+            是否已经存在该程序集                
+            </summary>                 
+            <returns>false:不存在该程序集,true:已经存在该程序集</returns>                
+        </member>
+        <member name="M:AyColorHelper.ToHexColor(System.Windows.Media.Color,System.Boolean)">
+            <summary>
+            2015年11月26日12:56:14 ay增加用于把颜色转16进制
+            </summary>
+            <param name="color"></param>
+            <param name="alphaChannel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AyColorHelper.ConvertColorA(System.Windows.Media.Color,System.Double)">
+            <summary>
+            透明度转 A
+            </summary>
+            <param name="opacity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AyColorHelper.ConvertBright(System.Windows.Media.Color,System.Double)">
+            <summary>
+            颜色变亮 系数，大于1变亮，小于1 变暗
+            </summary>
+            <param name="color"></param>
+            <param name="ratio"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AyCommon.ToPackUri(System.String)">
+            <summary>
+            将字符串转PackUri的格式字符串
+            </summary>
+            <param name="filePath">PackUri的component/后面的路径</param>
+            <returns>格式化为PackUri后的的字符串</returns>
+        </member>
+        <member name="M:AyCommon.ToPackUri(System.String,System.String)">
+            <summary>
+            将字符串转PackUri的格式字符串
+            </summary>
+            <param name="filePath">PackUri的component/后面的路径</param>
+            <param name="assemblyName">程序集名字</param>
+            <returns></returns>
+        </member>
+        <member name="M:AyCommon.ToResourceDictionary(System.Uri)">
+            <summary>
+            转换packrui为 资源字典
+            </summary>
+            <param name="uri">完整的packuri路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:AyCommon.ToResourceDictionary(System.String)">
+            <summary>
+            转换packrui为 资源字典
+            </summary>
+            <param name="uri">完整的packuri路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:AyCommon.ToResourceDictionary(System.String,System.String)">
+            <summary>
+            转换packrui为 资源字典
+            </summary>
+            <param name="assemblyName">程序集名称</param>
+            <param name="filePath">后面路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:AyCommon.ToUri(System.String)">
+            <summary>
+            string 的Uri转 Uri类型
+            </summary>
+            <param name="Uri"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AyCommon.MemoryGC">
+            <summary>
+            内存回收
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:AyCommon.ToGuidList(System.String)" -->
+        <member name="M:AyCommon.ToStringList(System.String)">
+            <summary>
+            默认是 逗号分割
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AyCommon.ToInt(System.Object)">
+            <summary>
+            切勿转换用于double的字符串 转int类型
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AyCommon.ToInt2(System.Object)">
+            <summary>
+            处理，例如03的字符串，即返回3，如果"2"的字符串，那么返回2
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AyCommon.ToBoolByByte(System.Object)">
+            <summary>
+            1和"true"返回   true，否则返回false
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AyCommon.GetByte(System.Object)">
+            <summary>
+            取得byte[]
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="P:AyCommon.GetGuid">
+            <summary>
+            获取一个全球唯一码GUID字符串,默认全部转换为小写
+            作者：AY
+            时间:2016-6-20 00:17:40
+            </summary>
+        </member>
+        <member name="P:AyCommon.GetGuidNoSplit">
+            <summary>
+            创建一个GUID，没有"-"分隔符的
+            作者：AY
+            时间:2016-6-20 00:17:40
+            </summary>
+        </member>
+        <member name="M:AyCommon.RndNum(System.Int32)">
+            <summary>
+            生成0-9随机数
+            </summary>
+            <param name="codeNum">生成长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:AyCommon.NextDouble(System.Random,System.Double,System.Double)">
+            <summary>
+            生成设置范围内的Double的随机数
+            例子:_random.AyNextDouble(1.5, 2.5)
+            作者：AY
+            添加时间：2016-06-19 21:28:24
+            </summary>
+            <param name="random">Random对象</param>
+            <param name="miniDouble">生成随机数的最大值</param>
+            <param name="maxiDouble">生成随机数的最小值</param>
+            <returns>当Random等于NULL的时候返回0;</returns>
+        </member>
+        <member name="M:AyCommon.ToDate2IntString(System.DateTime)">
+            <summary>
+            例如2012-03-22 12:22:24 可以转换成20120322122224
+            </summary>
+            <param name="dateTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AyCommon.GetWeekDate(System.DateTime,System.Int32)">
+            <summary>
+            获得本周，上周，下周
+            2013年11月6日15:38:54 杨洋写
+            </summary>
+            <param name="dts">时间</param>
+            <param name="day">差天，-7就是上周，7就是下周</param>
+            <returns></returns>
+        </member>
+        <member name="M:AyCommon.GetBeginTime(System.DateTime)">
+            <summary>
+            获取开始时间
+            </summary>
+            <param name="dateTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AyCommon.GetEndTime(System.DateTime)">
+            <summary>
+            获取结束时间
+            </summary>
+            <param name="dateTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AyCommon.GetBeginTime(System.Nullable{System.DateTime})">
+            <summary>
+            获取开始时间
+            </summary>
+            <param name="dateTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AyCommon.GetEndTime(System.Nullable{System.DateTime})">
+            <summary>
+            获取结束时间
+            </summary>
+            <param name="dateTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AyCommon.ValidateLength(System.String,System.Int32)">
+            <summary>
+            判断此字符串是否超过指定长度
+            </summary>
+            <param name="s"></param>
+            <param name="length"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AyThread.Sleep(System.Int32)">
+            <summary>
+            ay 在2015年12月10日15:04:15增加
+            方便暂停线程
+            </summary>
+            <param name="millisecondsTimeout"></param>
+        </member>
+        <member name="M:AyTime.setInterval(System.Int32,System.Action)">
+            <summary>
+             2015年12月10日14:18:09 
+            ay编写，用于方便定时任务，这里假如3000，那么第3秒执行
+            </summary>
+            <param name="millsecond"></param>
+            <param name="action"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AyTimeEx">
+            <summary>
+            作用：用于创建指定执行次数的时间计时器，对AyTime的拓展，用于当前执行次数不能static，防止共享导致错误，特地创建一个AyTimeEx的类，用于每个重复执行任务，都有1个当前的执行次数
+            时间：2016-6-20 00:09:57
+            作者：AY
+            </summary>
+        </member>
+        <member name="T:BusinessCommon">
+            <summary>
+            业务通用 拓展
+            </summary>
+        </member>
+        <member name="M:BusinessCommon.CalculateAgeCorrect(System.DateTime,System.DateTime)">
+            <summary>
+            计算年龄
+            </summary>
+            <param name="birthDate">出生日期</param>
+            <param name="now">现在日期</param>
+            <returns></returns>
+        </member>
+        <member name="M:BusinessCommon.CreateOrderId">
+            <summary>
+            自动生成订单编号  201008251145409865
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SolidColorBrushConverter">
+            <summary>
+            用户画刷辅助类
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,20 @@
+﻿<control:AyWindow x:Class="ExcelToDatabase.Views._ViewStart"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:control="http://www.ayjs.net/controls"    TitleBarHeight="32" 
+      xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" BorderThickness="0" 
+      xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" 
+      xmlns:controller="clr-namespace:ExcelToDatabase.Controllers"  
+      MinWidth="1200" MinHeight="600" Width="1400" Height="800" Title="Excel To Database  v1.0" 
+      xmlns:local="clr-namespace:ExcelToDatabase.Views" WindowStartupLocation="CenterScreen"
+      Background="#FFF"
+      mc:Ignorable="d" Icon="pack://siteoforigin:,,,/Contents/Themes/thumb/a景观/dakapath_64X64.ico">
+    <control:AyWindow.DataContext>
+        <controller:ViewStartController />
+    </control:AyWindow.DataContext>
+    <Grid  x:Name="layout"  Background="Transparent" >
+        <Frame Margin="0,0,0,0" Source="/ExcelToDatabase;component/Views/Home/HomeView.xaml" NavigationUIVisibility="Hidden"></Frame>
+    </Grid>
+</control:AyWindow>

@@ -1,0 +1,23 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:s="clr-namespace:System;assembly=mscorlib"
+               > 
+    <s:String x:Key="MessageBox.OK">Ok</s:String>
+    <s:String x:Key="MessageBox.Cancel">Cancel</s:String>
+    <s:String x:Key="MessageBox.Yes">Yes</s:String>
+    <s:String x:Key="MessageBox.No">No</s:String>
+
+    <s:String x:Key="SkinSet.PictureSelect">Picture</s:String>
+    <s:String x:Key="SkinSet.ColorSelect">Color</s:String>
+    <s:String x:Key="SkinSet.SetOpen">Settings</s:String>
+    <s:String x:Key="SkinSet.FromLocal">From Local</s:String>
+    <s:String x:Key="SkinSet.LastPage">Last Page</s:String>
+    <s:String x:Key="SkinSet.NextPage">Next Page</s:String>
+
+    <s:String x:Key="SkinCommonSet.GaoSi">Gaussia Radius</s:String>
+    <s:String x:Key="SkinCommonSet.MainOpacity">Main Opacity</s:String>
+    <s:String x:Key="SkinCommonSet.FunctionOpacity">Func. Opacity</s:String>
+    <s:String x:Key="SkinCommonSet.Language">Language</s:String>
+
+    <s:String x:Key="SkinCommonSet.MoreSupport">More Support</s:String>
+</ResourceDictionary>

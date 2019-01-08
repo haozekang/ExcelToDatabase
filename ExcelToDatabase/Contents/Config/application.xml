@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <skinBg path="\Contents\Themes\big\a景观/默认.jpg" thumb="\Contents\Themes\thumb\a景观\默认.jpg"></skinBg>
+  <skinVedioBg path="\Contents\bg\video\拉脱维亚.avi"></skinVedioBg>
+  <skinColorBg value="www.ayjs.net" use="0"></skinColorBg>
+  
+  <themeMode value="img"/> <!--img代表图片背景，v代表视频背景-->
+  <themeColor value="Default"/>
+  <themeLanguage value="zh-cn"></themeLanguage>
+  
+  <!--配色支持-->
+  <themeSkin value="Default"/> 
+  <!--暂时只支持一个控件样子-->
+  <Gaosi value="0"/><!--最大值0-255，只支持xp以上，不包括xp系统-->
+  <USMGaosi value="0"/><!--最大值0-100,用于锐化图片，暂时没用-->
+  <RecOpa1 value="1"/>
+  <RecOpa2 value="1"/>
+  <RecOpa3 value="1"/>
+  <RecOpa4 value="1"/>
+  <skinSwitchAnimation value="2"></skinSwitchAnimation>
+  
+  <config1 value="2"/>
+  <config2 value=""/>
+  <config3 value=""/>
+  <config4 value=""/>
+  <config5 value=""/>
+  <config6 value=""/>
+  <config7 value=""/>
+  <config8 value=""/>
+  <config9 value=""/>
+  <config10 value=""/>
+  
+ 
+</Application>

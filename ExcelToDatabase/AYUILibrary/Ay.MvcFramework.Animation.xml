@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Ay.MvcFramework.Animation</name>
+    </assembly>
+    <members>
+        <member name="T:Ay.Framework.WPF.AyAnimate.AyAnimateBase">
+            <summary>
+            2016-7-4 10:55:23 version:2.0
+            </summary>
+        </member>
+        <member name="P:Ay.Framework.WPF.AyAnimate.AyAnimateBase.IsAnimateCompleted">
+            <summary>
+            动画是否完成
+            </summary>
+        </member>
+        <member name="M:Ay.Framework.WPF.AyAnimate.AyTimeAniBases.setInterval(System.Int32,System.Action)">
+            <summary>
+             2015年12月10日14:18:09 
+            ay编写，用于方便定时任务，这里假如3000，那么第3秒执行
+            </summary>
+            <param name="millsecond"></param>
+            <param name="action"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Ay.Framework.WPF.AyAnimate.AyAniBounce.UpHeight">
+            <summary>
+            默认是35
+            </summary>
+        </member>
+        <member name="P:Ay.Framework.WPF.AyAnimate.AyAniBounce.Bounces">
+            <summary>
+            默认值是3
+            </summary>
+        </member>
+        <member name="P:Ay.Framework.WPF.AyAnimate.AyAniBounce.Bounciness">
+            <summary>
+            默认值是2
+            </summary>
+        </member>
+        <member name="P:Ay.Framework.WPF.AyAnimate.AyAniFlash.FlashCount">
+            <summary>
+            -1代表一直闪，>0的值
+            </summary>
+        </member>
+        <member name="T:Ay.Framework.WPF.AyAnimate.AyAniHinge">
+            <summary>
+            支持animatespeed
+            </summary>
+        </member>
+        <member name="P:Ay.Framework.WPF.AyAnimate.AyAniRubberBand.Oscillations">
+            <summary>
+            抖动次数
+            </summary>
+        </member>
+        <member name="T:Ay.Framework.WPF.AyAnimate.AyAniTada">
+            <summary>
+            支持animatespeed
+            </summary>
+        </member>
+        <member name="T:Ay.Framework.WPF.AyAnimate.AyAniWobble">
+            <summary>
+            支持animatespeed
+            </summary>
+        </member>
+        <member name="T:Ay.Framework.WPF.AyAnimate.AyAnimateTypeBase">
+            <summary>
+            拓展父类属性，给类型动画空间
+            </summary>
+        </member>
+        <member name="P:Ay.Framework.WPF.AyAnimate.AyAnimateTypeBase.AniEasingMode">
+            <summary>
+            easymode  1代表to   2代表out   3代表  inout   0什么都不加
+            </summary>
+        </member>
+        <member name="F:Ay.Framework.WPF.AyAnimate.AyAnimateTypeBase.isAutoAddName">
+            <summary>
+            是否自动附加属性
+            </summary>
+        </member>
+        <member name="F:Ay.Framework.WPF.AyAnimate.AyAnimateTypeBase.extCompleteAction">
+            <summary>
+            拓展类额外的动画完成时候需要的操作
+            </summary>
+        </member>
+        <member name="M:Ay.Framework.WPF.AyAnimate.AyAnimateTypeBase.CreateStoryboard">
+            <summary>
+            类型动画子类去实现
+            2016-7-8 10:37:08
+            </summary>
+        </member>
+        <member name="M:Ay.Framework.WPF.AyAnimate.AyAnimateTypeBase.Animate">
+            <summary>
+             模板模式,真正对外暴露的方法名要一致
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
